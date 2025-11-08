@@ -30,30 +30,9 @@ body a {
 */
 
 
-.blue-btn:hover, .tr-btn:hover, .check-block label { 
-  cursor: default; color: #fff!important;}
 
-.blue-btn a, .mercy a, .buttons a, .blue-btn--full a, .blue-btn--full, .blue-btn, .mercy
+ .blue-btn--full, .blue-btn, .mercy
 { color: #fff!important;}
-
-
-.blue-btn a, .mercy a, .buttons a
-{color: #fff!important;}
-
-.mercy:hover {color:#fff!important; cursor: pointer!important;}
-.tab {cursor: pointer!important;}
-
-
-#pun .page .blue-btn,
-#pun .page .blue-btn a,
-#pun .page .mercy,
-#pun .page .mercy a,
-#pun .page .buttons a,
-#pun .page .blue-btn--full,
-#pun .page .blue-btn--full a {
-  color: #fff !important;
-  text-decoration: none !important;
-}
 
 /*
 .page {
