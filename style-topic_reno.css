@@ -7,16 +7,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-body {
-  min-height: 100vh;
-  background: #111216;
-  color: #BDBDBD;
-  font-family: "Inter", "SF Pro Text", sans-serif;
-  justify-content: center;
-  padding: 40px 16px;
-}
-
-
 ::selection {
 background: #7993AF;
 color: #fff;
@@ -43,15 +33,34 @@ body a {
 .blue-btn:hover, .tr-btn:hover, .check-block label { 
   cursor: default; color: #fff!important;}
 
+.blue-btn a, .mercy a, .buttons a, .blue-btn--full a, .blue-btn--full, .blue-btn, .mercy
+{ color: #fff!important;}
+
+
+.blue-btn a, .mercy a, .buttons a
+{color: #fff!important;}
 
 .mercy:hover {color:#fff!important; cursor: pointer!important;}
 .tab {cursor: pointer!important;}
 
+
+#pun .page .blue-btn,
+#pun .page .blue-btn a,
+#pun .page .mercy,
+#pun .page .mercy a,
+#pun .page .buttons a,
+#pun .page .blue-btn--full,
+#pun .page .blue-btn--full a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/*
 .page {
-  width: 856px; /* ширина под картинку */ 
+  width: 856px; 
   margin: auto;
 }
-/*margin-left: 5%;
+margin-left: 5%;
 */
 
 
@@ -62,9 +71,6 @@ height: auto;          /* preserve aspect ratio */
 padding-bottom: 15px;
 }
 /*.page img {max-width:750px;}*/
-
-.blue-btn a, .mercy a, .buttons a, .blue-btn--full a, .blue-btn--full, .blue-btn, .mercy
-{ color: #fff!important;}
 
 /* ----- ВЕРХНЯЯ КАРТИНКА + ВКЛАДКИ ----- */
 
@@ -220,8 +226,6 @@ input[type="checkbox"] {
 
 
 /* кнопки */
-.blue-btn a, .mercy a, .buttons a
-{color: #fff!important;}
 
 
 .blue-btn:hover {
