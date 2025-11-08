@@ -1,0 +1,306 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  min-height: 100vh;
+  background: #111216;
+  color: #BDBDBD;
+  font-family: "Inter", "SF Pro Text", sans-serif;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+
+::selection {
+background: #7993AF;
+color: #fff;
+text-shadow: none;
+}
+
+/*
+body {
+cursor: url(https://upforme.ru/uploads/000f/09/5e/10347/673962.png), default;
+}
+
+a, button {
+cursor: url(https://upforme.ru/uploads/000f/09/5e/10347/673962.png), pointer;
+}
+
+
+body a {
+  cursor: url(https://upforme.ru/uploads/000f/09/5e/10347/409556.png), pointer !important;
+}
+
+*/
+
+
+.blue-btn:hover, .tr-btn:hover, .check-block label { 
+  cursor: default; color: #fff!important;}
+
+
+.mercy:hover {color:#fff!important; cursor: pointer!important;}
+.tab {cursor: pointer!important;}
+
+.page {
+  width: 856px; /* ширина под картинку */ 
+  margin: auto;
+}
+/*margin-left: 5%;
+*/
+
+
+.showoff {max-width:750px;
+display: block;        /* makes <img> behave like a block */
+margin: 0 auto;        /* centers it horizontally */ 
+height: auto;          /* preserve aspect ratio */
+padding-bottom: 15px;
+}
+/*.page img {max-width:750px;}*/
+
+.blue-btn a, .mercy a, .buttons a, .blue-btn--full a, .blue-btn--full, .blue-btn, .mercy
+{ color: #fff!important;}
+
+/* ----- ВЕРХНЯЯ КАРТИНКА + ВКЛАДКИ ----- */
+
+.top-strip {
+  position: relative;
+  width: 856px;
+  height: 80px; /* можно подправить под картинку */
+  background: url("https://i.imgur.com/ALSXWRy.png") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;      /* вкладки снизу картинки */
+  padding: 0px 90px 38px;        /* отступы слева/справа и снизу */
+}
+
+.tab-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 21px;
+  /* фон убран, чтобы был прозрачным */
+  background: transparent;
+}
+
+.tab {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  color: #e2e2e8;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.12s ease;
+}
+
+.tab:hover {
+  background: #2a2c33;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.tab.active {
+  background: #2f85ff;
+  color: #ffffff;
+}
+
+/* ----- НИЖНИЙ БЛОК С ТЕКСТОМ ----- */
+
+.content-frame {
+  margin-top: 0px;
+  border-radius: 0px;
+  background: #1b1c21;
+  padding: 16px 18px;
+  height: 494px;
+  overflow-y: auto;
+  line-height: 1.5;
+  font-size: 11px;
+  text-align: justify;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.content-frame::-webkit-scrollbar {
+  width: 6px;
+}
+.content-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+.content-frame::-webkit-scrollbar-thumb {
+  background: #333642;
+  border-radius: 999px;
+}
+
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;             /* расстояние между колонками */
+  width: 100%;
+}
+
+.left {
+  width: 316px;
+}
+
+
+.left-script {
+  width: 316px;
+  margin-top: 120px;
+  padding-left: 110px;
+}
+
+
+.right {
+  flex: 1;
+}
+
+/* чекбоксы */
+.check-block label {
+  display: block;
+  margin-bottom: 6px;
+}
+input[type="checkbox"] {
+  accent-color: #2f85ff;
+  transform: scale(0.85); /* было 1.1, теперь меньше */
+  margin-right: 6px;
+  cursor: pointer;
+  vertical-align: middle; /* чтобы не прыгали по высоте */
+}
+
+/* иконка + кнопка */
+.icon-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 16px;
+}
+.icon-line .icon {
+  width: 32px;
+  height: 32px;
+}
+.mercy {
+  background: #35363B;
+  color: #fff!important;
+  border-radius: 6px;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-size: 11px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.mercy:hover{
+  background: #3C3C3C;
+  color: #DFDFDF;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+
+
+/* кнопки */
+.blue-btn a, .mercy a, .buttons a
+{color: #fff!important;}
+
+
+.blue-btn:hover {
+  background: #7993AF;}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;              /* не переносятся */
+  margin-top: 30px;
+}
+.blue-btn {
+  background: #2f85ff;
+  color: #fff;
+  border-radius: 22px;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+  display: inline-block;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.tr-btn{
+  background: none;
+  color: #fff;
+  border-radius: 22px;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+  display: inline-block;
+  transition: background 0.9s ease, color 0.9s ease;
+  border: 2px solid #2f85ff;
+
+}
+
+
+.tr-btn:hover {
+  background: #7993AF; border-color: #7993AF;}
+
+/* пунктирная линия */
+.divider {
+  width: 316px;
+  height: 0;
+  border-top: 2px dashed #797979;
+  margin: 20px 0;
+}
+
+/* описание под кнопкой */
+.desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d6d6d6;
+  margin-top: 10px;
+}
+
+
+.right-section {
+  margin-bottom: 19px;
+}
+
+/* таблетки-заголовки справа: полная ширина, одна в строке */
+.blue-btn--full {
+  width: auto;
+  display: inline-block;
+  margin-bottom: 12px;
+  margin-left: 18px;
+}
+
+/* текст справа чуть более “параграфный” */
+.right .check-block label {
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+
+/* текст справа */
+.right p {    }
