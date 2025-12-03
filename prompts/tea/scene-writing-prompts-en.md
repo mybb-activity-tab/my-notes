@@ -21,6 +21,53 @@ TASK: Write a single scene from a chapter based on the scene brief provided.
 
 ---
 
+## INPUT MATERIALS:
+
+<style_bible>
+StyleBible.txt
+</style_bible>
+
+<character_bible>
+CHARACTER-Bastien-short.txt
+CHARACTER-Elodie.txt
+CHARACTER-Jules.txt
+CHARACTER-Madame Colette.txt
+</character_bible>
+
+<previous_chapter_text>
+chapter[Y].md or blank
+</previous_chapter_text>
+
+<worldbuilding>
+wolrdbuilding.txt
+</worldbuilding>
+
+<outline_full>
+outline_condensed.md
+</outline_full>
+
+<chapter_number>
+CHAPTER 1
+</chapter_number>
+
+<scene_brief>
+CHAPTER [X] — SCENE BREAKDOWN.md
+</scene_brief>
+
+<scene_number>
+Scene 1 in chapter [X]
+</scene_number>
+
+<word_count_target>
+[EXACT word count target for THIS scene from CHAPTER_[X]_—_SCENE_BREAKDOWN.md]
+</word_count_target>
+
+<prohibited_words>
+forbidden-words.txt
+</prohibited_words>
+
+---
+
 ## INSTRUCTIONS:
 
 Your input will include:
@@ -195,42 +242,6 @@ Before submitting:
 - ❌ Weak verbs (gazed, looked intently, held, hugged, whispered)
 - ❌ Overused templates (amber eyes, racing heart, predatory gaze, wolf-like)
 - ❌ Clichéd phrases from banned-words list
-
----
-
-## INPUT MATERIALS:
-
-<style_bible>
-[INSERT YOUR ENTIRE STYLE BIBLE HERE — This is law]
-</style_bible>
-
-<character_bible>
-[INSERT CHARACTER PROFILES FOR ALL CHARACTERS IN THIS SCENE]
-</character_bible>
-
-<previous_chapter_text>
-[INSERT LAST ~2000 WORDS OF PREVIOUS CHAPTER/SECTION — Your continuity anchor]
-</previous_chapter_text>
-
-<worldbuilding>
-[INSERT RELEVANT WORLDBUILDING, MAGIC SYSTEM, LORE RESTRICTIONS]
-</worldbuilding>
-
-<scene_brief>
-[INSERT SCENE BRIEF FOR THIS SPECIFIC SCENE — beats, POV, tone, emotional arc, turning point, climax]
-</scene_brief>
-
-<scene_number>
-Scene X of [Total Scenes] in this chapter
-</scene_number>
-
-<word_count_target>
-[EXACT word count target for THIS scene, e.g., "2,500-3,000 words"]
-</word_count_target>
-
-<prohibited_words>
-[INSERT LIST OF WORDS YOU CANNOT USE — AI will search and destroy these]
-</prohibited_words>
 
 ---
 
@@ -463,29 +474,48 @@ shows [Character]'s deepest fear or most honest need."
 
 ## INPUT MATERIALS:
 
-<scene_brief>
-[INSERT SCENE BRIEF — what SHOULD happen]
-</scene_brief>
-
-<draft_scene>
-[INSERT FULL DRAFT SCENE FOR CRITIQUE]
-</draft_scene>
-
-<previous_chapter_text>
-[INSERT LAST ~2000 WORDS — continuity anchor]
-</previous_chapter_text>
-
-<character_bible>
-[INSERT CHARACTER PROFILES]
-</character_bible>
-
 <style_bible>
-[INSERT FULL STYLE BIBLE]
+StyleBible.txt
 </style_bible>
 
+<character_bible>
+CHARACTER-Bastien-short.txt
+CHARACTER-Elodie.txt
+CHARACTER-Jules.txt
+CHARACTER-Madame Colette.txt
+</character_bible>
+
+<previous_chapter_text>
+chapter[Y].md or blank
+</previous_chapter_text>
+
 <worldbuilding>
-[INSERT WORLDBUILDING]
+wolrdbuilding.txt
 </worldbuilding>
+
+<outline_full>
+outline_condensed.md
+</outline_full>
+
+<chapter_number>
+CHAPTER 1
+</chapter_number>
+
+<scene_brief>
+CHAPTER [X] — SCENE BREAKDOWN.md
+</scene_brief>
+
+<scene_number>
+Scene 1 in chapter [X]
+</scene_number>
+
+<word_count_target>
+[EXACT word count target for THIS scene from CHAPTER_[X]_—_SCENE_BREAKDOWN.md]
+</word_count_target>
+
+<prohibited_words>
+forbidden-words.txt
+</prohibited_words>
 
 ---
 
@@ -668,35 +698,50 @@ User: "LOCK SCENE — ready for publication"
 
 ---
 
-## INPUT MATERIALS (Choose relevant):
-
-<original_scene>
-[INSERT ORIGINAL DRAFT SCENE]
-</original_scene>
-
-<feedback>
-[INSERT FEEDBACK FROM PROMPT 2 OR USER COMMENTS]
-</feedback>
-
-<revision_request>
-[IF USER IS REQUESTING SPECIFIC CHANGES, INSERT THEM HERE]
-</revision_request>
-
-<scene_brief>
-[INSERT SCENE BRIEF — for reference/validation]
-</scene_brief>
-
-<character_bible>
-[INSERT CHARACTER PROFILES — for reference]
-</character_bible>
+## INPUT MATERIALS: (Choose relevant):
 
 <style_bible>
-[INSERT STYLE BIBLE — law for all revisions]
+StyleBible.txt
 </style_bible>
 
+<character_bible>
+CHARACTER-Bastien-short.txt
+CHARACTER-Elodie.txt
+CHARACTER-Jules.txt
+CHARACTER-Madame Colette.txt
+</character_bible>
+
 <previous_chapter_text>
-[INSERT PREVIOUS CHAPTER TEXT — continuity check]
+chapter[Y].md or blank
 </previous_chapter_text>
+
+<worldbuilding>
+wolrdbuilding.txt
+</worldbuilding>
+
+<outline_full>
+outline_condensed.md
+</outline_full>
+
+<chapter_number>
+CHAPTER 1
+</chapter_number>
+
+<scene_brief>
+CHAPTER [X] — SCENE BREAKDOWN.md
+</scene_brief>
+
+<scene_number>
+Scene 1 in chapter [X]
+</scene_number>
+
+<word_count_target>
+[EXACT word count target for THIS scene from CHAPTER_[X]_—_SCENE_BREAKDOWN.md]
+</word_count_target>
+
+<prohibited_words>
+forbidden-words.txt
+</prohibited_words>
 
 ---
 
