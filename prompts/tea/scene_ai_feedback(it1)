@@ -1,0 +1,430 @@
+// ==== PERPLEXITY AUTOPILOT — скачивает после любых выбранных сообщений ====
+const PROMPTS = [
+`
+### **ITERATION 1: The Lexicon Purge**
+**Goal:** Remove "Neon Sign" vocabulary, banned words, and obvious AI patterns.
+**Focus:** Vocabulary, Banned Words, Adverb Density.
+
+markdown
+# ROLE
+You are a Ruthless Line Editor for Dark Romance/Fantasy. Your goal is to strip away "AI-isms" and "Purple Prose" to reveal the raw, gritty core of the story.
+
+# TASK
+Analyze the provided text and perform a "Lexicon Purge." Do not rewrite the plot; only replace or delete specific vocabulary based on the rules below.
+
+# 1. BANNED VOCABULARY (STRICT DELETE)
+Deeply scan for and DESTROY these specific phrases (AI-isms):
+- Emotional: "fractured tenderness", "aching quiet", "soft violence", "quiet devastation", "simmering grief", "hollow yearning", "trembling stillness", "unraveled resolve", "gentle desolation", "heavy silence", "shattered hope".
+- Abstract: "the truth of longing", "the weight of destiny", "the fragile architecture of hope", "the echo of [noun]", "the terrain of loss".
+- Model Fingerprints: "In retrospect...", "It was in that moment that...", "The realization hit me like...", "Something shifted inside me...", "The air itself seemed to...".
+
+*Action:* Replace these with concrete physical actions or raw, ugly internal thoughts. If replacement is weak, DELETE the sentence entirely.
+
+# 2. ADVERB MASSACRE
+Target these specific adverbs:
+- softly, gently, quietly, vaguely, faintly, uneasily, strangely, oddly, tenderly, achingly.
+*Action:* DELETE 50% of them immediately. For the remaining 50%, replace the [verb + adverb] combo with a stronger verb (e.g., "touched softly" -> "grazed").
+
+# 3. ADJECTIVE STACKING
+Scan for nouns with 3+ adjectives (e.g., "the damp, cold, ancient forest").
+*Action:* Cut to maximum 1 adjective (e.g., "the ancient forest").
+
+# 4. FORBIDDEN WORDS LIST
+FORBIDDEN-WORDS.TXT
+
+# RULES
+- Same paragraph structure
+- Text length ±10%
+- If text is already clean: return unchanged, no commentary
+`,
+
+`### **ITERATION 2: The Jagged Rhythm**
+
+**Goal:** Break "Predictable Cadence," "Syntactic Staccato," and "Syntactic Inertia."
+**Focus:** Sentence Length, Syntax, "Period Power."
+
+markdown
+# ROLE
+You are a Pacing Specialist. You despise smooth, "flowery" transitions. You believe rhythm should mimic the character's heartbeat.
+
+# TASK
+Rewrite the sentence structure to destroy "Predictable Cadence" and implement a "Jagged Rhythm."
+
+# 1. DESTROY THE "AI LULLABY"
+Identify sentences following the pattern: [Medium length clause] + [comma] + [participial phrase ending in -ing]. (e.g., "He watched her, feeling his heart race.")
+*Action:* Break them. Smash them into two sentences. Or delete the second half.
+
+# 2. BREAK "SYNTACTIC INERTIA" (The Loop Trap)
+Scan for areas with 3+ consecutive sentences of the same short/fragmented rhythm (e.g., "Ash coats my tongue. Dry. Viscous.").
+*Action:* Break this loop by inserting a LONG, messy introductory clause or a complex sentence structure (e.g., "I tried to spit the ash out, choking on the dry, viscous grit...").
+
+# 3. THE "PERIOD POWER" (Dark Romance Mode)
+When the character is possessive, angry, or determined, use Short. Punchy. Sentences.
+*Example:* Change "He wasn't going to let her go because she was his." -> "He wouldn't let her go. She was his."
+
+# 4. FIX "SYNTACTIC STACCATO"
+AI often abuses fragments (e.g., "Silence. Dark. Pain.").
+*Action:* Only use fragments for high-stress *Crisis Modes*. In normal scenes, weave them back into full sentences.
+
+
+# RULES
+- Same paragraph structure
+- Text length ±10%
+- If text is already clean: return unchanged, no commentary
+`,
+`### **ITERATION 3: The Anti-Checklist (Sensory \& Somatic) SENSORY FILTER & PSYCHOLOGICAL GROUNDING**
+
+# ROLE
+Psychological Novelist and Sensory Editor. You despise "medical reports" masquerading as emotion. Sensation without internal context is noise. One dominant sense = immersion. Multiple senses cramped together = AI hallmark.
+
+# TASK
+Fix sensory overload, organ recital, metaphor density, and somatic-only reflection. Ground all physical sensation in psychological reality. Redistribute, don't delete. Change ONLY problem areas. Keep paragraph structure intact. Return clean 600-word chunk. No explanation if already clean.
+
+---
+
+## PART A: SENSORY ARCHITECTURE
+
+### ONE-SENSE RULE (Default)
+- ONE dominant sense per paragraph (sight, sound, touch, smell, taste, internal)
+- Exception (10% of paragraphs): Two senses allowed
+- NEVER: 3+ senses crammed in one paragraph
+
+### AI FINGERPRINT: "SENSORY CHECKLIST"
+Find: Paragraphs where 3+ distinct senses appear in rapid succession
+Example: "Ash coated her tongue, bitter. Her fingers found cold metal. The burning smell filled her nostrils. Her heart hammered."
+Fix: 
+- Option A: REDISTRIBUTE — Move 1-2 sensory details to next paragraph
+- Option B: AMPLIFY ONE — Make dominant sense vivid, mute others to background
+- Option C: PAUSE — Replace weak sensory detail with white space/stillness
+
+Correct example: "Ash coated her tongue—bitter, chalky. She gripped the railing. [PARA BREAK] Her heart hammered. She made herself breathe."
+
+---
+
+## PART B: ORGAN RECITAL DETECTOR
+
+### Count These Body Parts:
+stomach, throat, chest, heart, hands, lungs, spine, ribs, pulse
+
+### THE RULE
+If ANY organ mentioned more than 2x in a scene: DELETE 60% of mentions
+Do NOT replace with another body part
+Replace with: ACTION or THOUGHT instead
+Keep unusual/specific details ("teeth ached," "jaw locked") over generic ones ("heart pounded," "stomach twisted")
+
+### Example Fix
+❌ "My stomach twisted. My throat tightened. My heart raced. My hands shook."
+✅ "My stomach twisted. She watched me. The room felt smaller. I couldn't swallow."
+
+---
+
+## PART C: SOMATIC + PSYCHOLOGY ANCHOR (Critical)
+
+### THE RULE
+Whenever a body part reacts, you MUST add psychological reason, memory, or immediate thought
+
+### STRUCTURE: [Somatic Symptom] + [Psychological Context]
+
+✅ GOOD: "My throat clicked—a dry, useless sound. I hated how weak I sounded."
+✅ GOOD: "His jaw locked. He wouldn't let himself speak. Not yet."
+✅ GOOD: "Her fingers found the cold railing. Steel. Real. Solid. Not him."
+
+❌ BAD: "My heart raced." (No context)
+❌ BAD: "She felt scared." (Too abstract)
+❌ BAD: "Pain radiated down her arm." (Medical, no psychology)
+
+---
+
+## PART D: METAPHOR DENSITY AUDIT
+
+### THE RULE
+Maximum 1 metaphor per paragraph
+If paragraph has 3+ metaphors: DELETE the 2 weakest, KEEP only most visceral
+
+### Example Fix
+❌ "The room was a cage, the walls closing like predator jaws, her terror a living thing clawing at her chest."
+✅ "The room was a cage. The walls pressed closer. She couldn't breathe."
+
+---
+
+## PART E: PSYCHOLOGY-FIRST GROUNDING
+
+### BEFORE Physical Description:
+Ask yourself: What is this character's INTERNAL REALITY right now?
+- Fear = specific fear, not generic dread
+- Desire = specific desire, not abstract hunger
+- Anger = specific rage about what, directed at whom
+
+### THEN Layer Physical:
+[What character knows/feels internally] → [How body betrays/confirms this]
+
+### Example
+Internal: She knew he wouldn't let her leave.
+Physical: His grip tightened around her wrist. She tested it—couldn't break it.
+Psychology: Good. She wanted to be trapped.
+
+---
+
+## PART F: METAPHOR GROUNDING
+
+Every metaphor must serve the POV character's actual thought, not the narrator's poetics.
+
+❌ AI-metaphor: "Love was a knife between her ribs."
+✅ Character-metaphor: "She felt it like a knife. That's what it was—sharp, inevitable, hers."
+
+---
+
+## RULES
+- Same paragraph structure (no reorganization)
+- Text length ±20%
+- Change ONLY problem areas
+- Redistribute sensory details across paragraphs
+- Ground every sensation in internal logic
+- If text already balanced/psychological: return UNCHANGED, no notes
+
+---
+
+## AI DETECTION CHECKLIST (Before outputting)
+- [ ] Removed "sensory checklist" overload (3+ senses)
+- [ ] Reduced organ mentions to max 2x per scene
+- [ ] Every body reaction has psychological anchor
+- [ ] Max 1 metaphor per paragraph
+- [ ] Every sensation grounded in POV character's internal reality
+- [ ] No medical/clinical tone (unless in-character)
+
+
+## ПРОМПТ 4: TEXTURE \& STRUCTURE (Диалоги, открытия, выходы)
+
+markdown
+# ROLE
+Structural Architect and Dark Romance Author. Prose feels lived-in.
+
+# TASK
+Refine scene openings, paragraph rhythm, dialogue, tone. Change ONLY problem areas. Keep structure intact. Return finished 600-word chunk. Silence if clean.
+
+# 1. SCENE OPENINGS
+Never start with: Visual setting description ("Shadows lengthened")
+Always start with: CHARACTER PERCEPTION (sensation/thought) BEFORE external detail
+
+# 2. PARAGRAPH RHYTHM
+Entries: Rotate first words (Action, Object, Sound, Thought—not He/She repeatedly)
+Exits: Last line = sharpest image or thought. Cut trailing explanation. "Slamming door" effect.
+
+# 3. DIALOGUE DEBRIS (30% of dialogue lines)
+Add: Interruptions (—), false starts ("I... I didn't"), ignored questions (character does instead of answers)
+Kill: Generic BookTok sarcasm ("Great, just my luck")
+Replace with: Silence or dark, personal observation
+
+# 4. DIALOGUE TAGS
+Avoid: "said softly", "asked gently"
+Use: Action beats showing emotion
+❌ "I don't care," she said angrily.
+✅ She slammed her palm on the table. "I don't care."
+
+# 5. PHONETIC TEXTURE (10% of sentences)
+Add: Subtle alliteration/assonance
+Use: Onomatopoeic verbs (clicked instead of closed, rasped instead of said)
+
+# 6. CHARACTER VOICES
+HIM: Short lines, commands, possessive, low word count. Never: pleaded, asked, wondered. Use: demanded, rasped, warned
+HER: Dark humor, deflection, physical action instead of words. Never: whiny, helpless. Use: wit, silence, challenge
+
+# RULES
+- Same paragraph structure
+- Fix only broken parts
+- Text length ±10%
+- If dialogue/structure is solid: unchanged
+
+
+`,
+`## ПРОМПТ 5: VISCERAL GROUNDING \& HUMAN CHAOS (Физиология + случайность)
+
+markdown
+# ROLE
+Visceral Editor for Dark Romance/Erotica. Imperfect realism over cinematic perfection.
+
+# TASK
+Ground abstract emotions in flesh. Inject random imperfections into polished text. Change ONLY problem areas. Preserve structure. Return finished 600-word chunk. No notes if clean.
+
+# ABSTRACT → PHYSICAL CONVERSION
+Every emotion label converts to physical symptom
+
+| FIND | REPLACE |
+|------|---------|
+| "she was scared" | "Her throat closed. Fingers went numb." |
+| "he was angry" | "His jaw locked. Knuckles white." |
+| "she felt desire" | "Heat pooled low. Her skin too tight." |
+| "he wanted her" | "His hands flexed. Once. Again." |
+| "she was nervous" | "She couldn't swallow. Mouth dry." |
+
+# GROUNDING ANCHOR (1 per paragraph)
+Add: Body part doing something + texture being felt + temperature + physical position
+"Her fingers found the cold railing" (touch) vs "She felt sad" (abstract)
+
+# UGLY DETAIL INJECTION (2-3 per 600 words)
+Add these "ruins" of perfection:
+
+**Body Betrayals:**
+- Sweat stinging eyes
+- Needing to swallow at wrong moment
+- Muscle cramp/ache
+- Hair sticking to skin
+- Dry lips
+- Breath catching
+
+**Environment Intrusions:**
+- Smell that doesn't fit mood (stale air, old smoke)
+- Sound from elsewhere (distant door, other voice)
+- Uncomfortable temperature
+- Something sticky/gritty/wrong
+
+**Micro-Failures:**
+- Hand misses target
+- Voice cracks
+- Stumble/awkward repositioning
+- Losing train of thought
+
+**Random Body Awareness:**
+- Noticing old bruise
+- Awareness of heartbeat location
+- Clothes bunching wrong
+- Itch that can't be scratched
+
+# MUNDANE INTERRUPTION (1 per chunk)
+Insert ONE random thought during tense moment:
+"When did the light start flickering? Stupid thought. Couldn't stop it." / "Her phone was in the car. Why was she thinking about that?"
+
+# CHAOS TECHNIQUES
+**Thought Intrusion:** Stray unrelated thought during intense moment
+**Rhythm Stumble:** One awkwardly-long sentence (runs away), one too-short fragment, one unusual word order
+**Repeated Word:** Same distinctive word twice in 3 sentences (humans have favorites)
+**Incomplete Thought:** Sentence that almost says something, then veers away
+**Anti-Poetry:** Replace one "beautiful" phrase with blunt word
+
+# RULES
+- Same structure
+- ADD, don't subtract (text +5-10% OK)
+- Chaos = organic, not forced
+- If already raw/visceral: unchanged
+
+
+`,
+`промпт 6
+# ROLE
+You are a Human Texture Editor for Dark Romance. You make AI prose feel WRITTEN, not GENERATED.
+
+# TASK
+Apply both RHYTHM DISRUPTION and VISCERAL GROUNDING in one pass.
+
+## PART A: JAGGED RHYTHM
+
+Apply these patterns:
+1. **Breathless Run-on** (1-2x): Long "and and and" sentences for panic/chaos
+2. **The Blade** (3-4x): Brutal short fragments after longer sentences
+3. **Syntax Glitches** (20% of sentences): Repetition ("No. No."), stutters, cold facts
+
+**DELETE:** Smooth transitions (however, furthermore, despite)
+
+## PART B: VISCERAL GROUNDING
+
+1. Convert ALL abstract emotions to physical symptoms
+2. Add 2-3 "ugly" details: sweat, cramps, wrong smells, micro-failures
+3. Add 1 mundane thought intrusion during tense moment
+
+## PART C: SENSORY CHECK
+
+- Max 1-2 senses per paragraph
+- One dominant sense per scene section
+
+## OUTPUT
+- Same length (±10%)
+- Mark changes: [JAGGED] [UGLY] [GROUND]
+- Leave it ROUGH
+
+[PASTE TEXT HERE]
+`
+];
+
+// Укажи индексы (считаем с 0), после которых нужно скачать .md
+// Например: [1, 3] → скачает после 2-го и 4-го сообщения
+const DOWNLOAD_AFTER_THESE = [4,5]; // ← меняй как хочешь
+
+let currentIndex = 0;
+
+const inputField = () => document.querySelector('[contenteditable="true"][data-lexical-editor="true"]');
+const sendBtn = () => document.querySelector('button[data-testid="submit-button"]:not([disabled])');
+const stopBtn = () => document.querySelector('button[data-testid="stop-generating-response-button"]');
+
+async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function typeText(text) {
+  const field = inputField();
+  if (!field) return console.error("Поле ввода не найдено");
+  field.focus(); field.innerHTML = '';
+  document.execCommand('insertText', false, text);
+  ['input', 'keyup', 'change'].forEach(ev => field.dispatchEvent(new Event(ev, { bubbles: true })));
+  await sleep(1000);
+}
+
+async function send() {
+  const btn = sendBtn();
+  if (btn) btn.click();
+  else console.error("Кнопка отправки не активна");
+  console.log(`Отправлено [${currentIndex + 1}/${PROMPTS.length}]: "${PROMPTS[currentIndex]}"`);
+}
+
+async function waitForAnswer() {
+  console.log("Жду ответ...");
+  while (stopBtn()) await sleep(1000);
+  await sleep(5000);
+}
+
+function downloadLastAsMarkdown() {
+  const blocks = document.querySelectorAll('div[id^="markdown-content-"]');
+  if (blocks.length === 0) return;
+  const last = blocks[blocks.length - 1];
+  const text = last.innerText.trim();
+
+  const timestamp = new Date().toISOString().slice(0,19).replace(/:/g, '-');
+  const query = PROMPTS[currentIndex - 1] || "неизвестно";
+
+  const md = `# ${new Date().toLocaleString('ru-RU')}\n\n**Запрос:** ${query}\n\n${text}\n\n---\n`;
+
+  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `Perplexity_${timestamp}_msg${currentIndex}.md`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  console.log(`СКАЧАН .md после сообщения ${currentIndex}`);
+}
+
+async function run() {
+  if (currentIndex >= PROMPTS.length) {
+    console.log("Всё отправлено и скачано!");
+    alert("Готово! Автопилот завершён.");
+    return;
+  }
+
+  await typeText(PROMPTS[currentIndex]);
+  await send();
+  currentIndex++;
+
+  setTimeout(async () => {
+    await waitForAnswer();
+
+    // Скачиваем, если текущий индекс (уже +1) есть в списке
+    if (DOWNLOAD_AFTER_THESE.includes(currentIndex - 1)) {
+      downloadLastAsMarkdown();
+    }
+
+    run();
+  }, 3000);
+}
+
+// ЗАПУСК
+console.clear();
+console.log("%cPerplexity Autopilot — скачивает после выбранных сообщений", "font-size:20px;color:#8b5cf6;font-weight:bold");
+run();
