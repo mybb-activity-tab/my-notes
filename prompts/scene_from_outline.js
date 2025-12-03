@@ -30,7 +30,7 @@ outline_condensed.md
 </outline_full>
 
 <chapter_number>
-2
+CHAPTER 1
 </chapter_number>
 
 <chapter_outline>
