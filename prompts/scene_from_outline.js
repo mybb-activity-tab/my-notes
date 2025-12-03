@@ -248,7 +248,7 @@ TASK: Critique a scene breakdown for a single chapter. Identify gaps, weak pacin
 
 ## INPUT
 
-\`\`\`
+
 <outline_full>
 outline_condensed.md
 </outline_full>
@@ -271,7 +271,7 @@ CHARACTER-Jules.txt
 <global_goals>
 [OPTIONAL: Themes, character arcs, tone for this chapter/book]
 </global_goals>
-\`\`\`
+
 
 ---
 
@@ -344,7 +344,7 @@ TASK: Integrate all feedback and finalize the breakdown. You are still NOT writi
 
 ## INPUT
 
-\`\`\`
+
 <original_breakdown>
 [SCENE BREAKDOWN FROM PROMPT 1]
 </original_breakdown>
@@ -365,7 +365,7 @@ TASK: Integrate all feedback and finalize the breakdown. You are still NOT writi
 - Preserve cliffhanger exactly
 - Honor all constraints
 </global_constraints>
-\`\`\`
+
 
 ---
 
@@ -416,7 +416,7 @@ TASK: Integrate all feedback and finalize the breakdown. You are still NOT writi
 4. Repeat 2–3 until locked
 5. Once locked → ready for Scene Brief prompts (separate workflow)
 
-\`\`\`
+
 
 ---
 
